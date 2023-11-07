@@ -6,8 +6,15 @@ import java.util.*;
 
 public class Account1  {
 
-    
+    public void addbalance()
+    {
+      
 
+    }
+    public void withdrawmoney()
+    {
+
+    }
     public void checkBalance() {
         
         System.out.println("Balance checked.");
@@ -37,28 +44,62 @@ public class Account1  {
     	 Scanner scan = new Scanner(System.in);
 
         
-               System.out.println("WELCOME TO OUR APP");
-        System.out.println("choose:  1. signup\n 2.login ");//check your balance\n 3. Place a bet");
+        System.out.println("WELCOME TO OUR APP");
+        
+        while(true)
+        {
+          System.out.println("choose:  1. signup\n 2.login ");//check your balance\n 3. Place a bet");
         
         int choice = scan.nextInt();
         Account1 obj = new Account1();
-       Options obj3=new Options();
+        Options obj3=new Options();
         switch(choice)
        {
         case 1:
        obj3.signup();
-       
+         
         break;
         case 2:
-       obj3.login();
+
+        System.out.println("Enter your Username:");
+        String loginUsername = scan.nextLine();
+        scan.nextLine();
+        System.out.println("Enter your Password:");
+        String loginPassword = scan.nextLine();
+
+        if (obj3.login(loginUsername, loginPassword)) {
+            System.out.println("Login successful!");
+
+            System.out.println("choose:  1.place bet:\n 2.check balance \n3.add balance \n4.withdraw from account ");//check your balance\n 3. Place a bet");
+        
+            int choice2 = scan.nextInt();
+                 switch(choice2)
+                 {
+                  case 1:
+                    obj.placeBet();
+                  case 2:
+                  obj.checkBalance();
+                  case 3:
+                    obj.addbalance();
+
+                  case 4:
+                  obj.withdrawmoney();
+                 }
+        }
+         else {
+            System.out.println("Invalid username or password. Login failed.");
+        }
        
+                 
+                    
+                 
         break;
-//        case 3:
-//        obj.placeBet();
-//      
+      }
+    }
+
        }
 
       
        
 }
-    }
+    

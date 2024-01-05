@@ -36,7 +36,7 @@ public class Options {
 	 System.out.println("Account no:");
       accountno=scan.nextLong();
 	 
-	 System.out.println("Add Balance(min 500Rs):");
+	 System.out.println("Add Balance(min 10,000Rs):");
 	 balance=scan.nextLong();
 	 
 
@@ -48,7 +48,7 @@ public class Options {
             writer.newLine();
             writer.write("UserName: " + username);
             writer.newLine();
-             writer.write("Password: " + password);
+            writer.write("Password: " + password);
             writer.close();
             writer.write("BankName: " + bankname);
             writer.newLine();
